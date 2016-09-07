@@ -1,0 +1,11 @@
+{
+  "name": "object-comb",
+  "version": "1.0.0",
+  "description": "recursively parse a JS plain object and run a function on arbitrarily nested keys of a given type",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "SITE team",
+  "license": "MIT"
+}
