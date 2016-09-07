@@ -4,8 +4,14 @@
   "description": "recursively parse a JS plain object and run a function on arbitrarily nested keys of a given type",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava tests.js"
   },
   "author": "SITE team",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.16.0"
+  },
+  "dependencies": {
+    "lodash": "^4.15.0"
+  }
 }
