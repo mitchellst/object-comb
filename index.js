@@ -11,16 +11,11 @@ function objectComb(obj, operation, test=_.isString){
   if (test(obj)) {
     obj = operation(obj); 
   }
-  if(_.isArray(obj)){
-    return obj.map(val => {
-      if (test(val)){
-        return operation(val);
-      } else if (_.isObject(val) || _.isArray(val)) {
-        return objectComb(val, operation, test); 
-      } else return val;
-    });
-  } else if(_.isObject(obj)){
-    return _.mapValues(obj, val => {
+
+  if(_.isArray(obj) || _.isObject(obj)){
+    let mapFunction = _.isArray(obj) ? _.map : _.mapValues;
+    
+    return mapFunction(obj, val => {
       if(test(val)){
         return operation(val);
       } else if (_.isObject(val) || _.isArray(val)) {
@@ -28,6 +23,7 @@ function objectComb(obj, operation, test=_.isString){
       } else return val;
     });
   }
+  
   return obj;
   
 };
